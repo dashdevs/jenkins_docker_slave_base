@@ -32,7 +32,7 @@ RUN wget https://github.com/nghttp2/nghttp2/releases/download/v1.32.0/nghttp2-1.
     && rm -rf nghttp2-1.32.0 \
     && rm nghttp2-1.32.0.tar.gz
 
-RUN echo 'deb http://ftp.debian.org/debian jessie-backports main' > /etc/apt/sources.list.d/deb-jessie-backports-main.list \
+RUN echo 'deb [check-valid-until=no] http://archive.debian.org/debian jessie-backports main' > /etc/apt/sources.list.d/deb-jessie-backports-main.list \
     && echo 'deb-src http://deb.debian.org/debian jessie main' > /etc/apt/sources.list.d/deb-src-jessie-main.list \
     && apt-get update \
     && apt-get -t jessie-backports install -y libssl-dev --no-install-recommends \
